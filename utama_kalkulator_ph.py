@@ -1,33 +1,16 @@
 import streamlit as st
-from st_pages import show_pages_from_config, add_page_title
 
-# Either this or add_indentation() MUST be called on each page in your app to add indendation in the sidebar
-add_page_title()
+from st_pages import Page, add_page_title, show_pages
 
-show_pages_from_config()
+"## Declaring the pages in your app:"
 
-[[pages]]
-path = "streamlit_app.py"
-name = "Home"
-icon = "🏠"
-add_page_title("Home")
+show_pages(
+    [
+        Page("utama_kalkulator_ph.py", "Home", "🏠"),
+        # Can use :<icon-name>: or the actual icon
+        Page("phlarutanasam_kalkulator_ph.py", "Menghitung pH Larutan Asam", ":books:"),
+        # The pages appear in the order you pass them
+    ]
+)
 
-[[pages]]
-path = "other_pages/page2.py"
-name = "Page 2"
-icon = ":books:"
-
-[[pages]]
-name = "My second"
-icon = "🎈️"
-is_section = true
-
-# Pages after an `is_section = true` will be indented
-[[pages]]
-name = "Another page"
-icon = "💪"
-
-# Unless you explicitly say in_section = false`
-[[pages]]
-name = "Not in a section"
-in_section = false
+add_page_title()  # Optional method to add title and icon to current page
