@@ -1,5 +1,16 @@
 import streamlit as st
 st.title("Kalkulator pH Larutan")
 
-if st.pages("Kalkulator pH Larutan Asam"):
-  st.show_page("https://kalkulatorphlarutan-c3ewuknkoryyvwbvxuu4g4.streamlit.app/", ":home:")
+from st_pages import Page, show_pages, add_page_title
+
+# Optional -- adds the title and icon to the current page
+add_page_title()
+
+# Specify what pages should be shown in the sidebar, and what their titles and icons
+# should be
+show_pages(
+    [
+        Page("streamlit_app.py", "Home", "🏠"),
+        Page("other_pages/page2.py", "Page 2", ":books:"),
+    ]
+)
