@@ -1,10 +1,33 @@
 import streamlit as st
+st.title("Kalkulator pH Larutan Asam")
 
-from st_pages import Page, add_page_title, show_pages
+from st_pages import show_pages_from_config
 
-"## Declaring the pages in your app:"
+show_pages_from_config()
+[[pages]]
+path = "example_app/streamlit_app.py"
+name = "Home"
+icon = ":house:"
 
-show_pages([    Page("utama_kalkulator_ph.py", "Home", "🏠"),
-                Page("phlarutanasam_kalkulator_ph.py", "Menghitung pH Larutan Asam", ":books:"),])
+[[pages]]
+path = "example_app/example_one.py"
+name = "Example One"
+icon = ":books:"
 
-add_page_title()  # Optional method to add title and icon to current page
+[[pages]]
+path = "example_app/example_four.py"
+name = "Example Four"
+icon = "📖"
+
+[[pages]]
+path = "example_app/example_two.py"
+name = "Example Two"
+icon = "✏️"
+
+[[pages]]
+path = "example_app/example_three.py"
+
+[[pages]]
+path = "example_app/example_five.py"
+name = "Example Five"
+icon = "🧰"
